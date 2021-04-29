@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+    {% block content %}
+    <h1>上传成功</h1>
+    <div>
+        <img src="{{ path }}">
+    </div>
+    <div>
+        hash: {{ coin }}
+        time: {{ time }}
+    </div>
+    <div>
+        <a href="/user/{{ sender }}/tran/">继续交易</a>
+    </div>
+    {% endblock %}

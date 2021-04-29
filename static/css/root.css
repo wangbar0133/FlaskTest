@@ -1,0 +1,26 @@
+.title {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    top: 300px;
+    margin: auto;
+    bottom: 0;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+}
+.titles {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    top: 350px;
+    margin: auto;
+    bottom: 0;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+}

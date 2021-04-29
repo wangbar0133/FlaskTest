@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+    {% block mysytle %}
+    <style>
+        li {
+            list-style: none;
+            float: left;
+            width: 100.3%;
+        }
+        li img {
+            width: 100%;
+        }
+    </style>
+    {% block content %}
+    <h1>资产</h1>
+    <h2>{{ username }}</h2>
+    <div>
+        <ul>
+            {% for item in img_url_list %}
+            <li><img src="{{ item.img_url }}" alt="皮肤" style="width:300px" ></li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endblock %}

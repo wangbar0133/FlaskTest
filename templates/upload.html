@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+    {% block content %}
+    <h1>上传皮肤文件</h1>
+    <p id="username" value="{{ username }}">{{ username }}</p>
+    <div>
+        <form action="/uploader/" method="post" onsubmit="return check_form()" enctype='multipart/form-data'>
+            <input type="file" id="photo" name="photo"/>
+            <br>
+                消息
+            <br>
+            <input type="text" id="mesg" name="mesg" maxlength="70" style="width:200px"/>
+            <br>
+            <input type="submit" value="提交信息"/>
+        </form>
+    </div>
+    <script>
+        function check_form(){
+            var filename = document.getElementById("photo").value;
+            var mesg = document.getElementById("mesg").value;
+
+            console.log(mesg);
+            console.log(filename);
+
+            var reg_str = ".*jpg|jpeg$";
+            var reg = new RegExp(reg_str);
+
+            if (!filename) {
+                alert("请选择文件");
+                return false;
+            }
+
+            if (!reg.test(filename)){
+                alert("只支持上传jpg");
+                return false;
+            }
+
+            var reg_str1 = "^[\u4E00-\u9FA5A-Za-z0-9]+$";
+            var reg1 = new RegExp(reg_str1);
+
+            if (mesg.length != 0){
+                if (!reg1.test(mesg)){
+                    alert("只支持中文、英文、数字");
+                    return false;
+                }
+            }
+        }
+    </script>
+    {% endblock %}

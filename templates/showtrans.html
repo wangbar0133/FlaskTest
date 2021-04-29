@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+    {% block content %}
+    <h1>交易记录</h1>
+    <table>
+        <tr>
+            <th>时间</th>
+            <th>资产</th>
+            <th>描述</th>
+            <th>消息</th>
+        </tr>
+        {% for item in coin_history %}
+        <tr>
+            <td>{{ item.timestamp }}</td>
+            <td>
+                <a href="/coin/{{ item.coin }}/">{{ item.coin }}</a>
+            </td>
+            <td>
+                {{ item.desc }}
+            </td>
+            <td>
+                {{ item.mesg }}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endblock %}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SkinChain</title>
+    <script src="https://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link rel=stylesheet type="text/css" href="{{ url_for('static', filename='css/base.css')}}">
+    {% block mysytle %}
+
+    {% endblock %}
+</head>
+<body>
+    <div class='pg-header'>
+        <a href="/">SkinChain</a>
+        <a href="/">首页</a>
+        <a href="/login/">登录</a>
+        <a href="/create/">注册</a>
+        <a href="/user/">用户中心</a>
+        <a href="/tran/">交易</a>
+        <a href="/upload/">上传</a>
+    </div>
+    {% block content %}
+
+    {% endblock %}
+</body>
+</html>
